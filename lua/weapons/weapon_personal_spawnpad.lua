@@ -43,13 +43,12 @@ function SWEP:PrimaryAttack()
 		if IsValid(owner.Spawnpad) then owner.Spawnpad:Remove() owner.Spawnpad = nil end
 
 		local spawnpad = ents.Create("personal_spawnpad")
-		spawnpad:DeleteOnRemove(owner)
-		spawnpad:SetCreator(owner)
-		spawnpad:SetPos(owner:GetPos())
-		spawnpad:Spawn()
-
 		owner:AddCleanup("sents", spawnpad)
 		owner.Spawnpad = spawnpad
+
+		spawnpad:SetPos(owner:GetPos())
+		spawnpad:SetCreator(owner)
+		spawnpad:Spawn()
 
 		self:Remove()
 	end)
