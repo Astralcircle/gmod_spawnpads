@@ -58,9 +58,9 @@ function SWEP:SecondaryAttack()
 
 end
 
-hook.Add("PlayerSelectSpawn", "PersonalSpawnpads", function(ply)
+hook.Add("PlayerSpawn", "PersonalSpawnpads", function(ply)
 	if IsValid(ply.Spawnpad) then
-		return ply.Spawnpad
+		ply:SetPos(ply.Spawnpad:GetPos())
 	end
 end)
 

@@ -38,14 +38,16 @@ if SERVER then
 	end
 else
 	local beam = Material("models/props_combine/portalball001_sheet")
-	local vector_offset = Vector(0, 0, 30)
 
 	function ENT:Draw()
 		self:DrawModel()
 
 		local pos = self:GetPos()
+		local endpos = self:GetUp()
+		endpos:Mul(30)
+		endpos:Add(pos)
 
 		render.SetMaterial(beam)
-		render.DrawBeam(pos, pos + vector_offset, 9, 0, 0.9, color_white)
+		render.DrawBeam(pos, endpos, 9, 0, 0.9, color_white)
 	end
 end
