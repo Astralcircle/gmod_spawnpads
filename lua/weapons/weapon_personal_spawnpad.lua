@@ -44,6 +44,7 @@ function SWEP:PrimaryAttack()
 
 		local spawnpad = ents.Create("personal_spawnpad")
 		owner:AddCleanup("sents", spawnpad)
+		owner:DeleteOnRemove(spawnpad)
 		owner.Spawnpad = spawnpad
 
 		spawnpad:SetPos(owner:GetPos())
