@@ -51,3 +51,19 @@ else
 		render.DrawBeam(pos, endpos, 9, 0, 0.9, color_white)
 	end
 end
+
+function ENT:CanTool(ply, trace, toolname, tool, button)
+	if toolname = "remover" then
+		return true
+	else
+		return false
+	end
+end
+
+function ENT:CanProperty(ply, property)
+	if property = "remover" then
+		return true
+	else
+		return false
+	end
+end
