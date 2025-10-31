@@ -53,7 +53,7 @@ else
 end
 
 function ENT:CanTool(ply, trace, toolname, tool, button)
-	if toolname = "remover" then
+	if toolname == "remover" then
 		return true
 	else
 		return false
@@ -61,7 +61,7 @@ function ENT:CanTool(ply, trace, toolname, tool, button)
 end
 
 function ENT:CanProperty(ply, property)
-	if property = "remover" then
+	if property == "remover" then
 		return true
 	else
 		return false
